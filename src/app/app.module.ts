@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { TikaComponent } from './tika/tika/tika.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
-    TikaComponent
+    TikaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

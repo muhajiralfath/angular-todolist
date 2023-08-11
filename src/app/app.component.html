@@ -1,21 +1,3 @@
-
-<img [src]="imgSrc" [alt]="imgAlt" class="img-fluid">
-
-<div class="mt-5">
-    <span (mouseover)="mOver()" (mouseout)="mOut()" [innerHTML]="message"></span>
-</div>
-
-<input type="text" class="form-control" id="name" (input)="onKeyPress($event)">
-
+<h1>PARENT COMPONENT</h1>
 <p>{{name}}</p>
-
-
-<ul>
-    <li *ngFor="let t of tes; let i = index">{{t}}</li>
-</ul>
-
-<p *ngIf="isActive; else inactiveTag">ACTIVE</p>
-
-<ng-template #inactiveTag>
-<p>INACTIVE</p>
-</ng-template>
+<app-child [(name)]="name"></app-child>

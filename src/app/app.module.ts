@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { TikaComponent } from './tika/tika/tika.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ChildComponent } from './child/child.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
     TikaComponent,
-    LoginComponent
+    LoginComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

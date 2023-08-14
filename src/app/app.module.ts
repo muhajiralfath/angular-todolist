@@ -3,24 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
-import { TikaComponent } from './tika/tika/tika.component';
-import { LoginComponent } from './auth/login/login.component';
-import { ChildComponent } from './child/child.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnimeFormComponent } from './anime/anime-form/anime-form.component';
+import { AnimeListComponent } from './anime/anime-list/anime-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent,
-    TikaComponent,
-    LoginComponent,
-    ChildComponent
+    AnimeFormComponent,
+    AnimeListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

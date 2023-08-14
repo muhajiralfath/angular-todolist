@@ -1,0 +1,32 @@
+<div class="container">
+    <form [formGroup]="animeForm" (ngSubmit)="submitData(animeForm.value)">
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" id="id" class="form-control" placeholder="Enter Id" formControlName="id">
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter Name" formControlName="name">
+            <div *ngIf="form('name').invalid && form('name').dirty || form('name').touched">
+                <div class="alert alert-danger" *ngIf="form('name').errors?.['required']">
+                    This field is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cover">Cover</label>
+            <input type="text" id="cover" class="form-control" placeholder="Enter Cover" formControlName="cover">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let anime of animes">
+            {{anime.name}}
+            <div class="card">
+                <img src="{{anime.cover}}" alt="Anime">
+            </div>
+        </div>
+    </div>
+
+</div>

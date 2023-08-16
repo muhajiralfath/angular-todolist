@@ -1,4 +1,5 @@
-<table>
+<button type="button" class="btn btn-success btn-sm m-1">Tambah</button>
+<table class="table table-hover">
     <thead>
         <tr>
             <th>No</th>
@@ -13,7 +14,8 @@
             <td>{{todo.name}}</td>
             <td>{{todo.description}}</td>
             <td>
-                <button (click)="deleteTodo(i)">Delete</button>
+                <button type="button" class="btn btn-warning btn-sm m-1">Update</button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteTodo(i)">Delete</button>
             </td>
         </tr>
     </tbody>

@@ -11,6 +11,8 @@ import { AgePipe } from './shared/pipes/age.pipe';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoService } from './todo/todo.service';
 import { TodoFormComponent } from './todo/todo-form/todo-form.component';
+import { ComponentBComponent } from './component-b/component-b.component';
+import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { TodoFormComponent } from './todo/todo-form/todo-form.component';
     AgePipe,
     TodoListComponent,
     TodoFormComponent,
+    ComponentBComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'form',
     component: TodoFormComponent,
   },
+  {
+    path: "form/:id",
+    component: TodoFormComponent
+  }
 ];
 
 @NgModule({

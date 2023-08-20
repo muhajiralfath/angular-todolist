@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { TodoFormComponent } from './todo/todo-form/todo-form.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoService } from './todo/todo.service';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { TodoService } from './todo/todo.service';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [TodoService]
 })

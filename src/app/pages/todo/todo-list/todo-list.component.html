@@ -1,4 +1,15 @@
-<button type="button" class="btn btn-success btn-sm m-1">Tambah</button>
+<button type="button" class="btn btn-success btn-sm m-1" routerLink="form">Tambah</button>
+<!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-info dropdown-toggle btn-sm " data-bs-toggle="dropdown" aria-expanded="false">
+    Sort
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" (click)="changeDirect('ASC')">ASC</a></li>
+    <li><a class="dropdown-item" (click)="changeDirect('DESC')">DESC</a></li>
+  </ul>
+</div>
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -10,13 +21,22 @@
     </thead>
     <tbody>
         <tr *ngFor="let todo of todos; let i = index">
-            <td>#</td>
-            <td>{{todo.name}}</td>
+            <td>{{i + 1}}</td>
+            <td>{{todo.todo}}</td>
             <td>{{todo.description}}</td>
             <td>
-                <button type="button" class="btn btn-warning btn-sm m-1">Update</button>
-                <button type="button" class="btn btn-danger btn-sm" (click)="deleteTodo(i)">Delete</button>
+                <button type="button" class="btn btn-warning btn-sm m-1" (click)="update(todo.id!)">Update</button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteTodo(todo.id!)">Delete</button>
             </td>
         </tr>
     </tbody>
 </table>
+<nav aria-label="Page navigation example" class="end-0">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" >Previous</a></li>
+    <li class="page-item"><a class="page-link" >1</a></li>
+    <li class="page-item"><a class="page-link" >2</a></li>
+    <li class="page-item"><a class="page-link" >3</a></li>
+    <li class="page-item"><a class="page-link" >Next</a></li>
+  </ul>
+</nav>

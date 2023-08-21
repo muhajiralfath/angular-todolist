@@ -17,6 +17,13 @@ export class TodoListComponent {
     direction: "", page: 0, shortBy: "", size: 0
   }
 
+  resAllTodo: ResAllTodo = {
+    data: [], page: 0, size: 0, totalElement: 0, totalPages: 0
+  }
+  totalPages: number[] = []
+  currentPage: number = this.resAllTodo.page
+  isLoading: boolean = false
+
   constructor(private readonly service: TodoService,
               private readonly router: Router,
   ) {
@@ -32,14 +39,37 @@ export class TodoListComponent {
 
 
   getAllTodo(page: number, size: number, shortBy: string, direction: string) {
+    this.isLoading = true
     this.service.getTodos(page, size, shortBy, direction).subscribe((res: ResAllTodo) => {
-      console.log(res.data)
+      this.totalPages = []
       this.todos = res.data
+      this.resAllTodo = res
+      this.getArrayTotalPage(this.resAllTodo.totalPages)
+      this.isLoading = false
     })
   }
 
-  paging(): void{
+  getArrayTotalPage(ttlPage: number): void {
+    for (let i=0; i < this.resAllTodo.totalPages; i++){
+      this.totalPages.push(i)
+    }
+  }
 
+  paging(page: number): void{
+    this.reqParams.page = page
+    this.request()
+  }
+  nextPage(): void  {
+    if (this.currentPage < this.resAllTodo.totalPages){
+      this.reqParams.page += 1
+    }
+    this.request()
+  }
+  prevPage(): void  {
+    if (this.currentPage > 0 ){
+      this.reqParams.page -= 1
+    }
+    this.request()
   }
 
   changeDirect(short: string): void {
@@ -90,4 +120,5 @@ export class TodoListComponent {
     })
   }
 
+  protected readonly indexedDB = indexedDB;
 }
